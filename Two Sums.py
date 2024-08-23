@@ -35,3 +35,11 @@ class Solution:
 #take a way from this is when using 2nd loop always use Hashmap, Hashmap is a like a Dictionary assigning I with every loop
 #if the list is [2,7,13,11] then Hashmap will be like this
 #{2: 0, 7: 1, 13: 2, 11: 3}
+
+#palindrome number
+def palindrome(n):
+    y = str(n)
+    if y == y[::-1]:
+        return True
+    else:
+        return False
