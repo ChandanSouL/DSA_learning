@@ -50,3 +50,54 @@ def subsquence(word1,word2):
         j+=1
     return i==len(word1)
 
+#longest common prefix
+def longestCommonPrefix(strs):
+        ans = ''
+        strs = sorted(strs)
+        first, last = strs[0], strs[-1]
+        if len(first) !=0:
+            i = 0
+            while i < len(first) and first[i] == last[i]:
+                ans+=first[i]
+                i+=1
+        return ans
+
+#merge strings alternatively
+def mergeAlternately(self, word1: str, word2: str) -> str:
+    ans = ''
+    i=0
+    j=0
+    while i<len(word1) and j < len(word2):
+        ans+=word1[i]
+        ans+=word2[j]
+        i+=1
+        j+=1
+    if i==(len(word1)) and j!=len(word2):
+        for k in range(j,len(word2)):
+            ans+=word2[k]
+    if j==(len(word2)) and i!=len(word1):
+        for k in range(i,len(word1)):
+            ans+=word1[k]
+    return ans
+
+#reverse a prefix of the word
+def reverseprefix(word,ch):
+    if ch in word:
+        index = word.find(ch)
+        return word[0:index+1][::-1] + word[index+1:]
+    return word
+
+#Find if the words can be order in ascending
+usernames = 'a'
+n = len(usernames)
+res = []
+no = 'NO'
+yes = 'YES'
+can_rearrange = no
+
+for i in range(n-1):
+    if usernames[i] > usernames[i + 1]:
+        can_rearrange = yes
+        break
+
+print(can_rearrange)
