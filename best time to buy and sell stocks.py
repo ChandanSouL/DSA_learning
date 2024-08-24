@@ -30,9 +30,10 @@ def closestNumber(arr):
             return closest
         
 #longest common prefix
+from collections import Counter
 def majorityElement(arr):
-    hashMap = Counter(nums)
-    maj = len(nums)//2
+    hashMap = Counter(arr)
+    maj = len(arr)//2
     res = 0
     for key,value in hashMap.items():
         if value > maj:
