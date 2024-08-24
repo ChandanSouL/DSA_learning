@@ -24,14 +24,11 @@ class Solution:
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
         nmap = {}
-        p = len(nums)
-
-        for i in range(p):
-            complement = target - nums[i]
+        for i,n in enumerate(nums):
+            complement = target - n
             if complement in nmap:
                 return [nmap[complement],i]
-            nmap[nums[i]] = i
-        return []
+            nmap[n] = i
 #take a way from this is when using 2nd loop always use Hashmap, Hashmap is a like a Dictionary assigning I with every loop
 #if the list is [2,7,13,11] then Hashmap will be like this
 #{2: 0, 7: 1, 13: 2, 11: 3}
