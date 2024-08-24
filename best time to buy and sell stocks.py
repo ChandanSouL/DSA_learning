@@ -30,15 +30,16 @@ def closestNumber(arr):
             return closest
         
 #longest common prefix
-def longestcommonprefix(strs):
-    ans = ""
-    first, last = strs[0], strs[-1]
-    if len(first) != 0:
-        i=0
-        while i < len(first) and first[i] == last[i]:
-            ans+=first[i]
-            i+=1
-    return ans
+def majorityElement(arr):
+    hashmap = defaultdict(int)
+    for i in range(len(arr)):
+        hashmap[arr[i]] += 1
+    majority = len(arr) / 2
+    res = 0
+    for num, count in hashmap.items():
+        if count > majority:
+            res = num
+    return res
 
 #issubsquence
 def subsquence(word1,word2):
