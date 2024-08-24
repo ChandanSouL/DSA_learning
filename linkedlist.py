@@ -62,12 +62,12 @@ def reverselinkedlist(head):
     # Traverse all the nodes of Linked List
     while curr is not None:
         # Store next with curr
-        next_node = curr.next
+        temp = curr.next
         # Reverse current node's next pointer
         curr.next = prev
         # Move pointers one position ahead
         prev = curr
-        curr = next_node
+        curr = temp
     # Return the head of reversed linked list
     return prev
 
