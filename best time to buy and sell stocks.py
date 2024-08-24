@@ -31,14 +31,12 @@ def closestNumber(arr):
         
 #longest common prefix
 def majorityElement(arr):
-    hashmap = defaultdict(int)
-    for i in range(len(arr)):
-        hashmap[arr[i]] += 1
-    majority = len(arr) / 2
+    hashMap = Counter(nums)
+    maj = len(nums)//2
     res = 0
-    for num, count in hashmap.items():
-        if count > majority:
-            res = num
+    for key,value in hashMap.items():
+        if value > maj:
+            res = key
     return res
 
 #issubsquence
