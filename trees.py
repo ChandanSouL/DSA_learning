@@ -4,6 +4,20 @@ class TreeNode():
         self.left = None
         self.right = None
 #depth first search
+def dfs(root):
+    stack = [[root]]
+    if not root:
+        return root
+    while stack:
+        node = stack.pop()
+        print(node.val,end = ' ')
+        if node.left:
+            stack.append(node.left)
+        if node.right:
+            stack.append(node.right)
+
+
+
 def in_order(root):
     #root,left,right
     if root is None:
@@ -31,7 +45,7 @@ def post_order(root):
 
 #bredth forst search or level order traversing
 def bfs(root):
-    queue = []
+    queue = [[root,1]]
     if root is None:
         return root
     while queue:
