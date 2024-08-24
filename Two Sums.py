@@ -23,7 +23,7 @@ class Solution:
 #Using HAshmaps to reduce the for loops
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
-        nmap = {)
+        nmap = {}
         for i,n in enumerate(nums):
             complement = target - n
             if complement in nmap:
