@@ -53,4 +53,31 @@ def addNodeAtPosition(new_data,pos,head):
     new_node.next = current.next
     current.next = new_node
     return head
+
+#reversing a linked list
+def reverselinkedlist(head):
+    # Initialize three pointers: curr, prev and next
+    curr = head
+    prev = None
+    # Traverse all the nodes of Linked List
+    while curr is not None:
+        # Store next with curr
+        next_node = curr.next
+        # Reverse current node's next pointer
+        curr.next = prev
+        # Move pointers one position ahead
+        prev = curr
+        curr = next_node
+    # Return the head of reversed linked list
+    return prev
+
+#Reverse a linked list by Recursion
+def recurssionLinkedlist(head):
+    if head is None and head.next is None:
+        return head
+    rest = recurssionLinkedlist(head.next)
+    head.next.next = head
+    head.next = None
+
+    return rest
     
