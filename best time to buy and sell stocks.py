@@ -41,14 +41,14 @@ def majorityElement(arr):
     return res
 
 #issubsquence
-def subsquence(word1,word2):
+def subsquence(word,word2):
     i = 0
     j = 0
-    while i < len(word1) and j < len(word2):
-        if word1[i] == word2[j]:
+    while i < len(word) and j < len(word2):
+        if word[i] == word2[j]:
             i+=1
         j+=1
-    return i==len(word1)
+    return i==len(word)
 
 #longest common prefix
 def longestCommonPrefix(strs):
