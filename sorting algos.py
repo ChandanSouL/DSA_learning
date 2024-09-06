@@ -55,3 +55,37 @@ if __name__ == "__main__":
     printArray(arr)
 #--------------------------------------------------------------------------------------
 # Merge sort
+def merge_sort(arr):
+    left_arr = arr[:len(arr)//2]
+    right_arr = arr[len(arr)//2:]
+
+    #recurssive merge sort
+    merge_sort(left_arr)
+    merge_sort(right_arr)
+
+    i= 0 #this is the index of left
+    j = 0 #this is the index of right
+    k = 0 #this is the index of the main arr
+
+    while i < len(left_arr) and j < len(right_arr):
+        if left_arr[i] < right_arr[j]:
+            arr[k] = left_arr[i]
+            i+=1
+        else:
+            arr[k] = right_arr[j]
+            j+=1
+        k+=1
+
+    while i<len(left_arr):
+        arr[k] = left_arr[i]
+        i+=1
+        k+=1
+    while j < len(right_arr):
+        arr[k] = right_arr[j]
+        j+=1
+        k+=1
+    return arr
+
+arr_test = [1,54,5642,21,5534,64,334,12,2,4,5]
+print(merge_sort(arr_test))
+ 
